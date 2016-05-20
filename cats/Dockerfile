@@ -9,6 +9,7 @@
 FROM python:alpine
 RUN pip install Flask
 RUN pip install pymongo
+RUN pip install redis
 copy hello_world.py /
 CMD ["python", "hello_world.py"]
 EXPOSE 5000
