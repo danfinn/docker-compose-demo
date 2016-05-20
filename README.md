@@ -12,5 +12,5 @@ This is a very basic docker-compose demo.  It will bring up a couple of differen
 * Clone this repo
 * cd into repo
 * run: docker-compose up -d
-* point browser at http://localhost:5000
+* point browser at [*localhost:5000](http://localhost:5000)
 * profit
