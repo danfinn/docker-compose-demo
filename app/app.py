@@ -3,24 +3,23 @@ from pymongo import MongoClient
 import random
 import redis
 
+
+# Setup mongo connection
 client = MongoClient('mongodb', 27017)
 db = client.data
 collection = db.zips
 app = Flask(__name__)
 
+# Setup redis connection and initialize our hit counter
 r = redis.Redis(host='redis')
 r.set('counter','0')
 
 @app.route('/')
-def hello_world():
+def simple_app():
     increment_redis()
     hits = get_redis()
     zip = get_random_zip()
     return render_template('index.html', title='Home', zip=zip, hits=hits)
-
-@app.route('/counter')
-def counter():
-    return get_redis()
 
 def get_random_zip():
     count = collection.count()
