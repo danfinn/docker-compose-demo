@@ -1,14 +1,13 @@
 version: "2"
 
 services:
-  cats:
-    build: cats
+  app:
+    build: app
     ports:
      - "5000:5000"
 
   mongodb:
     image: mongo
-    #build: mongo
     ports:
      - "37017:27017"
 

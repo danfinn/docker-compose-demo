@@ -1,0 +1,13 @@
+<html>
+  <head>
+    <title>{{ title }}</title>
+  </head>
+  <body>
+      <font color="grey">
+      <h2>Your random city is {{ zip.city }}, {{ zip.state }}.</h2>
+      <br>
+      <img src="http://maps.googleapis.com/maps/api/staticmap?center={{ zip.city }},{{ zip.state }}&size=640x400&key=AIzaSyC5nI7yHlTo7xjn4KvTycRs86L8rX0ASE0" />
+      <br>
+      <p>This page has been accessed {{ hits }} times.</p>
+  </body>
+</html>

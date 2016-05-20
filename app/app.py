@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 from pymongo import MongoClient
 import random
 import redis
@@ -14,9 +14,9 @@ r.set('counter','0')
 @app.route('/')
 def hello_world():
     increment_redis()
+    hits = get_redis()
     zip = get_random_zip()
-    #print zip['city']
-    return zip['city']
+    return render_template('index.html', title='Home', zip=zip, hits=hits)
 
 @app.route('/counter')
 def counter():
@@ -31,7 +31,7 @@ def increment_redis():
     return
 
 def get_redis():
-    value=r.get('counter')
+    value=r.get('counter').decode('utf-8')
     return value
 
 if __name__ == '__main__':
