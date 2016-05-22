@@ -12,6 +12,6 @@ This is a very basic docker-compose demo.  It will bring up a couple of differen
 * Clone this repo
 * cd into repo
 * run: docker-compose up -d
-* point browser at [localhost on port 5000](http://localhost:5000)
-* kibana can be reached at [localhost on port 5601](http://localhost:5601)
+* point browser at [localhost on port 5000](http://localhost:5000) to access the webapp
+* kibana can be reached at [localhost on port 5601](http://localhost:5601) for viewing logs
 * profit
